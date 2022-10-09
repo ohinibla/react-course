@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+nav {
+  height: 20vh;
+  display: flex;
+  align-items: flex-start;
+  padding: 30px 20px;
+  align-items: center;
+  background-color: #21222a;
+}
+
+nav > img {
+  display: flex;
+  width: 70px;
+  margin-right: 10px;
+}
+
+nav > h1 {
+  color: #61dafb;
+  margin-right: auto;
+  font-size: 32px;
+}
+
+nav > h2 {
+  color: #deebf8;
+  font-weight: 600;
+}
+
+.container {
+  padding: 0;
+  min-height: 100vh;
+}
+
+.main-container {
+  margin: 0;
+  padding: 0;
+  background-color: #282d35;
+  min-height: 80vh;
+}
+
+.header {
+  padding-top: 20px;
+  padding-left: 20px;
+  color: white;
+  font-weight: 700;
+}
+
+.main-container ul {
+  margin-left: 20px;
+}
+
+.main-container ul li {
+  color: white;
+  font-weight: 400;
+  margin-bottom: 15px;
+  list-style: none;
+}
+
+.main-container ul li::before {
+  content: "\2022";
+  color: #61dafb;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.main-container img {
+  position: absolute;
+  top: calc(50vh - 143px);
+  right: 0%;
+}
