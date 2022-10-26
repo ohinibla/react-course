@@ -1,6 +1,12 @@
+body {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #f5f5f0;
+}
+
 * {
   box-sizing: border-box;
-  /* border: 1px black solid; */
 }
 
 h1,
@@ -8,134 +14,126 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+p {
   margin: 0;
   padding: 0;
-  color: white;
 }
 
-body {
-  background-color: black;
-  font-family: "Inter";
-}
-
-.container {
-  margin: 10px 0;
-}
-
-.container--app {
-  margin: 0 auto;
-  padding: 44px 117px;
-  background-color: #23252c;
-  height: 100%;
-  width: 550px;
-  text-align: center;
-}
-
-.container--main {
-  margin: 0 auto;
-  width: 317px;
-  background-color: #1a1b21;
-  border-radius: 10px 10px 10px 10px;
-}
-
-.texts {
-  padding: 10px 35px;
-}
-
-.container--info > img {
+.navbar {
+  margin: 0;
+  display: flex;
+  background-color: white;
+  height: 100px;
   width: 100%;
-  border-radius: 10px 10px 0 0;
+  justify-items: center;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
 }
 
-#title {
-  margin-top: 21px;
-  font-weight: 700;
+.navbar > img {
+  width: 120px;
+  margin-left: 2rem;
 }
 
-#job-title {
-  color: #f3bf99;
-  font-weight: 400;
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 2rem;
 }
 
-#job-email {
-  margin: 0 10px;
-  font-weight: 400;
+.hero > img {
+  margin: 2rem auto;
+  max-width: 100%;
+}
+
+.hero .title {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 110%;
+}
+
+.hero .subtitle {
+  margin-top: 15px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 110%;
+  font-style: normal;
+}
+
+.card {
+  margin: 20px;
+  width: 180px;
+  font-weight: 300;
   font-size: 12px;
 }
 
-.btn-group {
-  display: flex;
-  justify-content: center;
-  gap: 17px;
-  margin: 30px 0 20px 0;
+.card--image {
+  width: 176px;
+  height: 235px;
+  position: relative;
+  margin-bottom: 5px;
 }
 
-.btn-group button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 115px;
-  height: 34px;
-  padding: 10px 10px;
-  border: 0;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
-  border-radius: 5px;
-  font-family: Inter;
-  font-weight: bold;
-}
-
-.btn-group:nth-child(1) {
+.card--badge {
   background-color: white;
+  border-radius: 3px;
+  padding: 1px 8px;
+  position: absolute;
+  font-size: 12px;
+  top: 5px;
+  left: 8px;
+  z-index: 2;
 }
 
-.btn-group button:nth-child(2) {
-  background-color: #5093e2;
-  color: white;
+.card--image > img {
+  width: 100%;
+  border-radius: 9px;
 }
 
-.btn-group button:nth-child(2):active {
-  background-color: #1d61af;
+.card--stats span {
+  margin-right: 2px;
 }
 
-.btn-group img {
-  margin-right: 10px;
+.card--star {
+  width: 14px;
+  margin: 0 3px;
 }
 
-.container--about {
-  margin-bottom: 20px;
+.card--desc {
+  margin-top: 5px;
 }
 
-.container--about > h2 {
-  text-align: left;
+.gray {
+  color: #918e9b;
 }
 
-.container--about > h6 {
-  font-weight: 400;
-  text-align: left;
+.bold {
+  font-weight: 600;
 }
 
-.container--interests > h2 {
-  text-align: left;
-}
-
-.container--interests > h6 {
-  font-weight: 400;
-  text-align: left;
-}
-
-.container--footer {
+.cards--list {
   display: flex;
-  justify-content: center;
-  gap: 15px;
+  flex-direction: row;
+  overflow: scroll;
 }
 
-.container--footer {
-  background-color: #161619;
-  padding: 20px 0 20px 0;
-  border-radius: 0 0 10px 10px;
+.contact--image {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 15px;
 }
 
-.container--footer a:hover {
-  filter: drop-shadow(0 0 20px red) invert(75%);
+.card--phone,
+.card--email {
+  display: flex;
+  align-items: baseline;
+}
+
+.card--phone img {
+  width: 15px;
+  margin-right: 5px;
+}
+
+.card--email img {
+  width: 15px;
+  margin-right: 5px;
 }

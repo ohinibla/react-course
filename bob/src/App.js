@@ -1,21 +1,18 @@
 import React from "react";
-
-import About from "./components/About";
-import Info from "./components/Info";
-import Interests from "./components/Interest";
-import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Card from "./components/Card";
+import Data from "./data";
 
 export default function App() {
+  const data = Data.map((item) => {
+    return <Card key={item.key} {...item} />;
+  });
   return (
-    <div className="container container--app">
-      <div className="container container--main">
-        <Info />
-        <div className="container texts">
-          <About />
-          <Interests />
-        </div>
-        <Footer />
-      </div>
-    </div>
+    <>
+      <Navbar />
+      <Hero />
+      <section className="cards--list">{data}</section>
+    </>
   );
 }
