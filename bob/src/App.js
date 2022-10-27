@@ -1,18 +1,18 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Card from "./components/Card";
-import Data from "./data";
+import Trip from "./components/Trip";
+import tripData from "./data";
 
 export default function App() {
-  const data = Data.map((item) => {
-    return <Card key={item.key} {...item} />;
+  const data = tripData.map((item) => {
+    return <Trip key={item.id} {...item} />;
   });
   return (
     <>
-      <Navbar />
-      <Hero />
-      <section className="cards--list">{data}</section>
+      <div className="container">
+        <Navbar />
+        <section className="trips--container">{data}</section>
+      </div>
     </>
   );
 }
