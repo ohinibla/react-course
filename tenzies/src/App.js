@@ -18,6 +18,7 @@ function App() {
   };
 
   const [dice, setDice] = React.useState(setRandomDice);
+  const [selectedDice, setSelectedDice] = React.useState(new Set());
   const [tenzies, setTenzies] = React.useState(false);
 
   React.useEffect(() => {
@@ -25,9 +26,12 @@ function App() {
     setTenzies(isAllHeld);
   }, [dice]);
 
+  console.log(tenzies);
+
   function rollAllDice() {
     if (tenzies) {
       setDice(setRandomDice);
+      setSelectedDice(new Set());
     } else {
       setDice((prevDice) => {
         return prevDice.map((die) => {
@@ -40,11 +44,21 @@ function App() {
   function holdDie(event, id, value) {
     // Disable holdDie functionality if the game is over
     if (!tenzies) {
-      setDice((prevDice) => {
-        return prevDice.map((die) =>
-          die.id === id ? { ...die, status: !die.status } : die
-        );
-      });
+      // Don't allow new value unless no die is selected yet
+      if (selectedDice.size === 0 || selectedDice.has(value)) {
+        setDice((prevDice) => {
+          return prevDice.map((die) =>
+            die.id === id ? { ...die, status: !die.status } : die
+          );
+        });
+        setSelectedDice((prevSelectedDice) => {
+          prevSelectedDice.add(value);
+          return prevSelectedDice;
+        });
+      } else {
+        event.target.classList.add("error");
+        setTimeout(() => event.target.classList.remove("error"), 1 * 1000);
+      }
     }
   }
 
