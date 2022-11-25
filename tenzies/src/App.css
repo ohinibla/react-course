@@ -14,6 +14,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
 .App {
   width: 100vw;
   height: 100vh;
@@ -30,24 +38,25 @@ main {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 5px;
 }
 
 .main--header {
-  margin-top: 2.5em;
+  margin-top: 0.5em;
   margin-bottom: 5px;
 }
 
 .main--desc {
   font-weight: 300;
-  width: 65%;
-  margin: 0 auto;
+  width: 75%;
+  margin: 10px auto;
 }
 
 .dice--container {
   max-width: 65%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  margin: 60px auto;
+  margin: 40px auto;
   grid-gap: 30px 20px;
 }
 
@@ -59,7 +68,7 @@ main {
 }
 
 .btn {
-  line-height: 50px;
+  /* line-height: 50px; */
   font-weight: 500;
   font-family: "Inter";
   font-size: 20px;
@@ -72,8 +81,26 @@ main {
   transform: scale(0.95, 0.95);
 }
 
+.die {
+  background-color: white;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
 .selected {
   background-color: #59e391;
+}
+
+.die * {
+  pointer-events: none;
+}
+
+td {
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 100%;
 }
 
 .roll {
@@ -85,11 +112,47 @@ main {
   cursor: pointer;
 }
 
+.timer--container {
+  margin: auto auto;
+  background-color: white;
+  color: black;
+  font-size: 32px;
+  display: flex;
+}
+
+.scores {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  margin: 30px 100px;
+}
+
+.scores h4 {
+  margin: 0;
+}
+
+.bestScore {  
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+    background-clip: text;
+}
+
+.bestScore--new {
+    animation-name: change;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    color: transparent;
+}
+
 .error {
   animation-name: bounce;
   animation-duration: 0.5s;
-  /* animation-delay: 0.25s; */
 }
+
 @keyframes bounce {
   0% {
     transform: translateX(0px);
@@ -100,7 +163,7 @@ main {
     timing-function: ease-out;
   }
   55% {
-    color: red;
+    background-color: red;
     transform: translateX(-5px);
     timing-function: ease-in;
   }
@@ -125,3 +188,9 @@ main {
     timing-function: ease-in;
   }
 }
+
+@keyframes change {
+    from {background-position: 300%};
+    to {background-position: 100%}
+}
+

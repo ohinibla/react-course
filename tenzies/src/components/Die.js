@@ -1,4 +1,5 @@
 import React from "react";
+import Dot from "./Dot"
 
 export default function Die(props) {
   const { id, status, value, holdDie } = props;
@@ -8,7 +9,7 @@ export default function Die(props) {
       className={`btn die ${status ? "selected" : ""}`}
       onClick={(event) => holdDie(event, id, value)}
     >
-      {value}
+      <Dot number={value} />
     </button>
   );
 }
