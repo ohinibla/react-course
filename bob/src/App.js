@@ -1,8 +1,8 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import Question from "./components/Question";
 import Loading from "./components/Loading";
 import Blob from "./components/Blob";
-import anime from "animejs";
+import Animation from "./components/Animation";
 import he from "he";
 import Axios from "axios";
 
@@ -14,18 +14,6 @@ function App() {
   const [start, setStart] = useState(false);
   const [end, setEnd] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const animation = useRef(null);
-
-  useEffect(() => {
-    animation.current = anime({
-      targets: ".checkmark path",
-      opacity: 1,
-      translateX: "-50px",
-      easing: "easeInOutExpo",
-      duration: 500,
-      delay: anime.stagger(100),
-    });
-  }, [end]);
 
   function fetchData() {
     setIsLoading(true);
@@ -53,7 +41,7 @@ function App() {
   }
 
   function startGame() {
-    setQuestions(() => []);
+    setQuestions([]);
     setStart(!start);
     setScore(0);
     setEnd(false);
@@ -93,7 +81,6 @@ function App() {
 
   return (
     <>
-      <Blob />
       <div className="App">
         <div className="main">
           {!start && (
@@ -115,7 +102,7 @@ function App() {
                   <div className="score">
                     <div>You scored {score} correct answers </div>
                     <button onClick={startGame} className="btn play-again">
-                      "Play again"
+                      Play again
                     </button>
                   </div>
                 ) : (
@@ -125,7 +112,7 @@ function App() {
                       disabled={isLoading}
                       className="btn check-answers"
                     >
-                      "Check answers"
+                      Check answers
                     </button>
                   </div>
                 )}
@@ -133,6 +120,8 @@ function App() {
             ))}
         </div>
       </div>
+      <Animation end={end} start={start} isLoading={isLoading} />
+      <Blob />
     </>
   );
 }

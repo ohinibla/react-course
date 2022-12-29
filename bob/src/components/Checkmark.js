@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-
 export default function Checkmark(props) {
   return props.result ? (
     <svg viewBox="0 0 199.99721 200.59409" width="99.998604" height="100.29704">
-      <g class="checkmark" transform="translate(-115.2211,-314.31628)">
+      <g className="checkmark" transform="translate(-115.2211,-314.31628)">
         <path
           opacity="0"
           id="path127395"
@@ -14,7 +12,7 @@ export default function Checkmark(props) {
     </svg>
   ) : (
     <svg viewBox="0 0 194.51869 196.44678" width="97.259346" height="98.223389">
-      <g class="checkmark" transform="translate(-115.00943,-315.2497)">
+      <g className="checkmark" transform="translate(-115.00943,-315.2497)">
         <path
           opacity="0"
           id="path127393"
